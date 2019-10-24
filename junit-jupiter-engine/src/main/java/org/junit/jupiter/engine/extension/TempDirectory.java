@@ -33,6 +33,7 @@ import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.function.Predicate;
 
+import org.junit.jupiter.api.condition.OS;
 import org.junit.jupiter.api.extension.BeforeAllCallback;
 import org.junit.jupiter.api.extension.BeforeEachCallback;
 import org.junit.jupiter.api.extension.ExtensionConfigurationException;
@@ -207,6 +208,14 @@ class TempDirectory implements BeforeAllCallback, BeforeEachCallback, ParameterR
 				}
 
 				private void makeWritableAndTryToDeleteAgain(Path path, IOException exception) {
+					if (OS.WINDOWS.isCurrentOs()) {
+						System.gc();
+						try {
+							Thread.sleep(1000);
+						} catch (InterruptedException e) {
+							Thread.interrupted();
+						}
+					}
 					try {
 						makeWritable(path);
 						Files.delete(path);
