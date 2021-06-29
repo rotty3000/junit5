@@ -12,6 +12,8 @@ dependencies {
 	api(projects.junitPlatformEngine)
 
 	compileOnlyApi(libs.apiguardian)
+
+	osgiVerification(projects.junitJupiterEngine)
 }
 
 tasks {

@@ -15,6 +15,9 @@ dependencies {
 	compileOnlyApi(libs.apiguardian)
 
 	compileOnly(kotlin("stdlib"))
+
+	osgiVerification(projects.junitJupiterEngine)
+	osgiVerification(projects.junitPlatformLauncher)
 }
 
 tasks {

@@ -23,6 +23,9 @@ dependencies {
 
 	compileOnly(kotlin("stdlib"))
 	testImplementation(kotlin("stdlib"))
+
+	osgiVerification(projects.junitJupiterEngine)
+	osgiVerification(projects.junitPlatformLauncher)
 }
 
 tasks {

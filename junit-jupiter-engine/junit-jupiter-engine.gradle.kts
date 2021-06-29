@@ -23,6 +23,8 @@ dependencies {
 	testImplementation(kotlin("stdlib"))
 	testImplementation(libs.kotlinx.coroutines)
 	testImplementation(libs.groovy3)
+
+	osgiVerification(projects.junitPlatformLauncher)
 }
 
 tasks {

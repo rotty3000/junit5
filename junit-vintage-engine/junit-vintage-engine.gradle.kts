@@ -24,6 +24,8 @@ dependencies {
 	testImplementation(projects.junitPlatformLauncher)
 	testImplementation(projects.junitPlatformRunner)
 	testImplementation(projects.junitPlatformTestkit)
+
+	osgiVerification(projects.junitPlatformLauncher)
 }
 
 tasks {
